@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+
+opentracing:
+  jaeger:
+    service-name: ProducerService
+    enabled: true
+    log-spans: true
+    probabilistic-sampler:
+      sampling-rate: 1
+    udp-sender:
+      host: ${JAEGER_HOST}
+      port: ${JAEGER_PORT}
+logging:
+  level:
+    root: INFO
+    io.opentracing.*: DEBUG
+    io.jaegertracing.*: DEBUG
