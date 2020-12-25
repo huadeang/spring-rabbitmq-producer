@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: spring-rabbitmq-producer
-          image: sangad/spring-rabbitmq-producer:v2
+          image: sangad/spring-rabbitmq-producer:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
