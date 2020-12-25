@@ -50,3 +50,13 @@ spec:
               value: "jaeger-collector.istio-system.svc.cluster.local"
             - name: JAEGER_PORT
               value: "6831"
+            - name: RABBITMQ_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mq-secret
+                  key: username
+            - name: RABBITMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mq-secret
+                  key: password
