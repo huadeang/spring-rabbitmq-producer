@@ -8,7 +8,7 @@ spec:
   gateways:
   - spring-api-gateway
   http:
-  - name: "spring-service-route"
+  - name: "spring-rabbitmq-producer-route"
     match:
     - uri:
         prefix: "/mqapi"
