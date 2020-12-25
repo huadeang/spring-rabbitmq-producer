@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-rabbitmq-producer-svc
+  labels:
+    app: spring-rabbitmq-producer
+    service: spring-rabbitmq-producer
+spec:
+  selector:
+    app: spring-rabbitmq-producer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
