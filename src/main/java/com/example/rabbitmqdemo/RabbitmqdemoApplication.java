@@ -32,20 +32,24 @@ public class RabbitmqdemoApplication {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-//	@Bean
-//	Queue queue() {
-//		return new Queue(queueName, false);
-//	}
-//
-//	@Bean
-//	TopicExchange exchange() {
-//		return new TopicExchange(topicExchangeName);
-//	}
-//
-//	@Bean
-//	Binding binding(Queue queue, TopicExchange exchange) {
-//		return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#");
-//	}
+
+    // create queue
+	@Bean
+	Queue queue() {
+		return new Queue(queueName, false);
+	}
+
+    // create exchange
+	@Bean
+	TopicExchange exchange() {
+		return new TopicExchange(topicExchangeName);
+	}
+
+    // create queue binding
+	@Bean
+	Binding binding(Queue queue, TopicExchange exchange) {
+		return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#");
+	}
 
 //	@Bean
 //	SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,

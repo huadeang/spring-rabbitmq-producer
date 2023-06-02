@@ -3,10 +3,10 @@ server:
 
 spring:
   rabbitmq:
-    host: 10.6.20.51
-    port: 30420
-    username: admin
-    password: P@ssw0rd
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
 
 opentracing:
   jaeger:
